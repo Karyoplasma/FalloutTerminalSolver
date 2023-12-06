@@ -99,22 +99,12 @@ public class EntropyCalculator {
 		
 		return bestChoice;
 	}
-	
-	public static void main(String[] args) throws WordLengthException {
-		EntropyCalculator e = new EntropyCalculator(5);
-		e.add("tests");
-		e.add("bests");
-		e.add("rests");
-		e.add("betas");
-		e.add("idiot");
-		e.add("meats");
-		e.add("feats");
-		e.add("fetas");
-		e.add("beats");
-		System.out.println(e.occurrancesAtPosition);
-		for (String word : e.wordlist) {
-			System.out.println(String.format("%s: %.4f", word, e.calculateEntropy(word)));
-		}
-	
+
+	public List<String> getWordlist() {
+		return wordlist;
+	}
+
+	public Map<Integer, Map<String, Integer>> getOccurrancesAtPosition() {
+		return occurrancesAtPosition;
 	}
 }

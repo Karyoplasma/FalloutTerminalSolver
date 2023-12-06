@@ -1,7 +1,6 @@
 package gui;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import net.miginfocom.swing.MigLayout;
 import javax.swing.JLabel;
@@ -10,17 +9,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-
 import core.TerminalSolver;
-
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerListModel;
 
+@Deprecated
 public class TerminalSolverGUI implements ActionListener{
 
 	private JFrame frmFalloutTerminalSolver;

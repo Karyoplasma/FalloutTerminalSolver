@@ -2,7 +2,6 @@ package core;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.swing.SpinnerListModel;
 
 
@@ -15,15 +14,16 @@ public class TerminalSolver {
 		this.calc = new EntropyCalculator(wordlist);
 	}
 
-	public void removeImpossibles(String choice, int hitFeedback) {
+	public List<String> removeImpossibles(String choice, int hitFeedback) {
 		List<String> removals = new ArrayList<String>();
-		for (String word : wordlist) {
+		for (String word : this.wordlist) {
 			if (this.getHits(choice, word) != hitFeedback) {
 				removals.add(word);
 				calc.remove(word);
 			}
 		}
 		this.wordlist.removeAll(removals);
+		return removals;
 	}
 
 	private int getHits(String choice, String word) {
@@ -47,7 +47,11 @@ public class TerminalSolver {
 		}
 		return builder.toString();
 	}
-
+	
+	public List<String> getWordlist(){
+		return this.wordlist;
+	}
+	
 	public SpinnerListModel getSpinnerModel() {
 		return new SpinnerListModel(this.wordlist.toArray());
 	}
