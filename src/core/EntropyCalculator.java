@@ -26,7 +26,7 @@ public class EntropyCalculator {
 	
 	public void add(String word) throws WordLengthException {
 		if (word.length() != this.length) {
-			throw new WordLengthException();
+			throw new WordLengthException(word);
 		}
 		word = word.toUpperCase();
 		this.wordlist.add(word);
